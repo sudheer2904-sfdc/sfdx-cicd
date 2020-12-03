@@ -13,10 +13,8 @@ public with sharing class TestContactController {
                 )
             );
         }
-
-        System.runAs(adminUser){
-            insert contacts;
-        }
+        
+        insert contacts;
     }
 
     @isTest

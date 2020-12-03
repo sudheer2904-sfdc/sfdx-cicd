@@ -7,9 +7,7 @@ public class TestAccountController {
         for (Integer i = 1; i <= amount; i++) {
             accounts.add(new Account(Name = 'Name ' + i));
         }
-        System.runAs(adminUser){
-            insert accounts;
-        }
+        insert accounts;
     }
 
     @isTest
