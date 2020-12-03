@@ -30,6 +30,7 @@ jobs:
             echo $SFDC_SERVER_KEY | base64 -d > keys/server.key
             node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid $SFDC_CONSUMERKEY --jwtkeyfile keys/server.key --username $SFDC_USERNAME --setdefaultdevhubusername -a DevHub
             node_modules/sfdx-cli/bin/run force:org:create -v DevHub -s -f config/project-scratch-def.json -a scratch
+            node_modules/sfdx-cli/bin/run force:data:tree:import -p ./data/data-plan.json
       - run:
           name: Remove Server Key
           when: always
