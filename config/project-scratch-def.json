@@ -1,7 +1,7 @@
 {
     "orgName": "LWC Recipes",
     "edition": "Developer",
-    "hasSampleData": false,
+    "hasSampleData": true,
     "features": ["Walkthroughs"],
     "settings": {
         "lightningExperienceSettings": {

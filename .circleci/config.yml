@@ -7,7 +7,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - sfdx-7.82.0-local
+            - sfdx-7.82.1-local
       - run:
           name: sfdx install
           command: |
@@ -15,12 +15,12 @@ jobs:
                 export SFDX_AUTOUPDATE_DISABLE=true
                 export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
                 export SFDX_DOMAIN_RETRY=300
-                npm install sfdx-cli@7.82.0
+                npm install sfdx-cli@7.82.1
                 node_modules/sfdx-cli/bin/run --version
                 node_modules/sfdx-cli/bin/run plugins --core
             fi
       - save_cache:
-          key: sfdx-7.82.0-local
+          key: sfdx-7.82.1-local
           paths:
             - node_modules
       - run:
