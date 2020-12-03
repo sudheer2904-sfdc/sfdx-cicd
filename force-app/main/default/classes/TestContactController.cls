@@ -23,11 +23,9 @@ public with sharing class TestContactController {
     static void getContactList() {
         TestContactController.createContacts(10);
 
-        System.runAs(adminUser){
             Test.startTest();
             List<Contact> conts = ContactController.getContactList();
             Test.stopTest();
-        }
 
         System.assertEquals(
             10,
@@ -40,11 +38,9 @@ public with sharing class TestContactController {
     static void findContacts() {
         TestContactController.createContacts(10);
 
-        System.runAs(adminUser){
         Test.startTest();
         List<Contact> conts = ContactController.findContacts('Last');
         Test.stopTest();
-        }
 
         System.assertEquals(
             10,
@@ -57,11 +53,9 @@ public with sharing class TestContactController {
     static void getSingleContact() {
         TestContactController.createContacts(1);
 
-        System.runAs(adminUser){
         Test.startTest();
         Contact cont = ContactController.getSingleContact();
         Test.stopTest();
-        }
         System.assertEquals(
             'First 1 Last 1',
             cont.Name,

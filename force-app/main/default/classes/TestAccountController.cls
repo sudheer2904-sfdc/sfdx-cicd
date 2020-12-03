@@ -16,11 +16,9 @@ public class TestAccountController {
     static void getAccountList() {
         TestAccountController.createAccounts(10);
 
-        System.runAs(adminUser){
             Test.startTest();
             List<Account> accts = AccountController.getAccountList();
             Test.stopTest();
-        }
 
         System.assertEquals(accts.size(), 10);
     }
@@ -29,11 +27,9 @@ public class TestAccountController {
     static void getSingleAccount() {
         TestAccountController.createAccounts(1);
 
-        System.runAs(adminUser){
             Test.startTest();
             Account acc = AccountController.getSingleAccount();
             Test.stopTest();
-        }
 
         System.assertEquals(acc.Name, 'Name 1');
     }
